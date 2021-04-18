@@ -1,0 +1,115 @@
+/* import section */
+/* resets propreties */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variable declaration's area */
+.header {
+  background: #42a4ff;
+  grid-column: 1/4;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.header .menu-btn {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  transform: rotate(360deg);
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+}
+.header .menu-btn span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 50px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s cubic-bezier(1, 2, 0.2, 0.6);
+}
+.header .menu-btn span:nth-child(1) {
+  top: 0;
+}
+.header .menu-btn span:nth-child(2), .header .menu-btn span:nth-child(3) {
+  top: 10px;
+}
+.header .menu-btn span:nth-child(4) {
+  top: 20px;
+}
+.header .menu-btn.open span:nth-child(1), .header .menu-btn.open span:nth-child(4) {
+  opacity: 0;
+}
+.header .menu-btn.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+.header .menu-btn.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+.header .logo {
+  color: #fff;
+  flex-grow: 1;
+  margin: 8px;
+}
+.header .search {
+  width: 150px;
+  height: 30px;
+  margin: 8px;
+}
+.header .login {
+  height: 30px;
+  width: 30px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 8px;
+}
+
+.drawer {
+  background: #42a4ff;
+  width: 220px;
+}
+.drawer.active {
+  display: none;
+}
+
+/*  Wrapper div Grid container */
+.container {
+  display: grid;
+  grid-template: auto 1fr auto/auto 1fr auto;
+  height: 100vh;
+  font-family: "ubuntu";
+}
+
+/* The major app layouts */
+.main {
+  grid-column: 2/4;
+}
+
+.footer {
+  background: #42a4ff;
+  grid-column: 1/4;
+  grid-row: 3/4;
+}
+
+ul {
+  padding: 8px;
+}
+ul li {
+  list-style-type: none;
+  text-align: center;
+  padding: 8px;
+}
+ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/*# sourceMappingURL=main.css.map */

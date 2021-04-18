@@ -1,0 +1,41 @@
+/* import section */
+@import './resets';
+@import './variables';
+@import './header';
+@import './drawer';
+/*  Wrapper div Grid container */
+.container {
+	display: grid;
+	grid-template: auto 1fr auto / auto 1fr auto;
+	height: 100vh;
+	font-family: 'ubuntu';
+	
+}
+
+/* The major app layouts */
+
+
+
+.main {
+	// background: map-get($color, accent);
+	grid-column: 2/4;
+}
+
+.footer {
+	background: map-get($color, primary);
+	grid-column: 1/4;
+	grid-row: 3/4;
+}
+
+ul {
+	padding: 8px;
+	li {
+		list-style-type: none;
+		text-align: center;
+		padding: 8px;
+		a {
+			text-decoration: none;
+			color: #fff;
+		}
+	}
+}

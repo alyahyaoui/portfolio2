@@ -1,0 +1,7 @@
+.drawer {
+	background: map-get($color, primary);
+  width: 220px;
+	&.active {
+		display: none;
+	}
+}
