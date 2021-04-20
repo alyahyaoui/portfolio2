@@ -1,16 +1,15 @@
-/* import section */
 /* resets propreties */
-* {
+*, *:before, *:after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 /* Variable declaration's area */
 .header {
-  background: #42a4ff;
+  background: #1b80de;
   grid-column: 1/4;
-  padding: 8px;
+  padding: 4px;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -20,30 +19,32 @@
   width: 30px;
   height: 30px;
   position: relative;
-  transform: rotate(360deg);
+  transform: rotate(0deg);
   transition: 0.4s ease-in-out;
   cursor: pointer;
+  display: flex;
+  margin-left: 8px;
 }
 .header .menu-btn span {
   display: block;
   position: absolute;
-  height: 5px;
-  width: 100%;
+  height: 3px;
+  width: 90%;
   background-color: #fff;
-  border-radius: 50px;
+  border-radius: 5%;
   opacity: 1;
   left: 0;
   transform: rotate(0deg);
   transition: 0.25s cubic-bezier(1, 2, 0.2, 0.6);
 }
 .header .menu-btn span:nth-child(1) {
-  top: 0;
+  top: 20%;
 }
 .header .menu-btn span:nth-child(2), .header .menu-btn span:nth-child(3) {
-  top: 10px;
+  top: 50%;
 }
 .header .menu-btn span:nth-child(4) {
-  top: 20px;
+  top: 80%;
 }
 .header .menu-btn.open span:nth-child(1), .header .menu-btn.open span:nth-child(4) {
   opacity: 0;
@@ -62,39 +63,75 @@
 .header .search {
   width: 150px;
   height: 30px;
-  margin: 8px;
+  margin: 0 8px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+}
+.header .search:focus {
+  outline: 0;
 }
 .header .login {
   height: 30px;
   width: 30px;
   background: #fff;
   border-radius: 50%;
-  margin: 8px;
+  margin: 0 8px;
 }
 
 .drawer {
-  background: #42a4ff;
+  background: #1b80de;
   width: 220px;
 }
 .drawer.active {
   display: none;
 }
+.drawer ul li:hover {
+  background: #fff;
+  color: #1b80de;
+}
+.drawer a {
+  color: inherit;
+  font-weight: bolder;
+}
 
+footer {
+  color: #fff;
+  font-family: "open sans";
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* import section */
 /*  Wrapper div Grid container */
 .container {
   display: grid;
   grid-template: auto 1fr auto/auto 1fr auto;
   height: 100vh;
-  font-family: "ubuntu";
+  font-family: "Open sans";
 }
 
 /* The major app layouts */
 .main {
   grid-column: 2/4;
+  position: relative;
+}
+.main .backdrop {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.445);
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+.main .backdrop.open {
+  visibility: visible;
 }
 
 .footer {
-  background: #42a4ff;
+  background: #1b80de;
   grid-column: 1/4;
   grid-row: 3/4;
 }

@@ -1,41 +1,52 @@
 /* import section */
-@import './resets';
-@import './variables';
-@import './header';
-@import './drawer';
+
+@use './resets';
+@use './variables';
+@use './header';
+@use './drawer';
+@use './footer';
 /*  Wrapper div Grid container */
 .container {
-	display: grid;
-	grid-template: auto 1fr auto / auto 1fr auto;
-	height: 100vh;
-	font-family: 'ubuntu';
-	
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr auto;
+  height: 100vh;
+  font-family: 'Open sans';
 }
 
 /* The major app layouts */
 
-
-
 .main {
-	// background: map-get($color, accent);
-	grid-column: 2/4;
+  grid-column: 2/4;
+  position: relative;
+  .backdrop {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.445);
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    &.open {
+      visibility: visible;
+    }
+  }
 }
 
 .footer {
-	background: map-get($color, primary);
-	grid-column: 1/4;
-	grid-row: 3/4;
+  background: map-get(variables.$color, primary);
+  grid-column: 1/4;
+  grid-row: 3/4;
 }
 
 ul {
-	padding: 8px;
-	li {
-		list-style-type: none;
-		text-align: center;
-		padding: 8px;
-		a {
-			text-decoration: none;
-			color: #fff;
-		}
-	}
+  padding: 8px;
+  li {
+    list-style-type: none;
+    text-align: center;
+    padding: 8px;
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
 }

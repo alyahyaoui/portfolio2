@@ -1,7 +1,17 @@
+@use './variables';
 .drawer {
-	background: map-get($color, primary);
+  background: map-get(variables.$color, primary);
   width: 220px;
-	&.active {
-		display: none;
-	}
+  &.active {
+    display: none;
+  }
+  ul li:hover {
+    background: #fff;
+    color: map-get(variables.$color, primary);
+		
+  }
+  & a {
+    color: inherit;
+    font-weight: bolder;
+  }
 }
